@@ -5,7 +5,7 @@ const Terms = () => {
   return (
     <>
       <div>
-        <div className="relative w-full flex justify-center items-center h-[300px] pt-20 sm:pt-20 overflow-hidden bg-sky-950">
+        <div className="relative w-full flex justify-center items-center h-[300px] pt-20 sm:pt-20 overflow-hidden bg-slate-950">
           <div className="absolute inset-0">
             <img
               src={hero}

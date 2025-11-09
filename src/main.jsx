@@ -9,6 +9,7 @@ import Contact from './pages/Contact.jsx'
 import Privacy from './pages/Privacy.jsx'
 import Terms from './pages/Terms.jsx'
 import Footer from './components/Footer.jsx'
+import Consultation from './components/Consultation.jsx'
 
 
 createRoot(document.getElementById('root')).render(
@@ -21,6 +22,8 @@ createRoot(document.getElementById('root')).render(
       <Route path="/contact" element={<Contact />}/>
       <Route path="/privacy" element={<Privacy />}/>
       <Route path="/terms" element={<Terms />}/>
+      <Route path="/consultation" element={<Consultation />}/>
+      <Route path="/*" element={<Home />}/>
     </Routes>
     <Footer />
   </BrowserRouter>

@@ -1,83 +1,103 @@
 import React from "react";
-import aboutImg from '../assets/aboutImg.webp'
+import aboutImg from "../assets/aboutImg.webp";
+import { Users, Target, Award } from "lucide-react";
 
 const About = () => {
-
     const testimonials = [
         {
-            text: `"DevTech Digital transformed our business with their custom SaaS solution. Their team understood our needs perfectly and delivered a platform that has significantly improved our operational efficiency."`,
+            text: `"Our clients appreciate our attention to detail, clear communication, and commitment to delivering quality results every time."`,
             author: "CEO, Technology Company",
         },
         {
-            text: `"Working with DevTech Digital was a game-changer for our company. Their expertise in SaaS development helped us create a product that our customers love, and their ongoing support ensures we stay ahead of the curve."`,
+            text: `"Our clients trust us for our professionalism, transparent process, and dedication to delivering high-quality digital solutions that drive real business growth."`,
             author: "Founder, Software Innovation Company",
         },
     ];
 
     return (
-        <div>
-            <div className="py-22 bg-gray-50">
-                <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-10 px-6">
-                    <div className="flex-1">
-                        <img
-                            src={aboutImg}
-                            alt="About DevTech Digital"
-                            className="rounded-2xl shadow-lg w-full object-cover"
-                        />
-                    </div>
+        <section className=" text-white overflow-hidden">
+            {/* About Section */}
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 px-6 py-25">
+                {/* Image */}
+                <div className="flex-1 relative group">
+                    <img
+                        src={aboutImg}
+                        alt="About DevTech Solutions Provider"
+                        className="rounded-2xl  shadow-lg w-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 rounded-2xl"></div>
+                </div>
 
-                    <div className="flex-1 text-gray-700">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-6 sm:text-center">About DevTech Digital</h2>
-                        <p className="mb-4 leading-relaxed">
-                            Founded with a passion for innovation and excellence, DevTech Digital
-                            has been at the forefront of SaaS development since our inception. We
-                            combine technical expertise with strategic thinking to deliver
-                            solutions that not only meet but exceed our clients’ expectations.
-                        </p>
-                        <p className="mb-4 leading-relaxed">
-                            Our team of experienced developers, designers, and consultants work
-                            collaboratively to transform complex challenges into elegant,
-                            user-friendly software solutions that drive real business results.
-                        </p>
-                        <p className="leading-relaxed">
-                            At DevTech Digital, we believe in building lasting partnerships with
-                            our clients, understanding their unique needs, and delivering
-                            solutions that help them stay ahead in today’s competitive digital
-                            landscape.
-                        </p>
+                {/* Content */}
+                <div className="flex-1 space-y-5">
+                    <h2 className="text-3xl text-center sm:text-4xl md:text-5xl font-bold text-sky-950">
+                        About
+                    </h2>
+                    <div className="w-20 h-1 bg-yellow-400 mx-auto mt-2 mb-5"></div>
+
+                    <p className="text-gray-500 leading-relaxed text-sm sm:text-base">
+                        At <span className="text-yellow-400 font-semibold">DevTech Solutions Provider</span>, we help businesses
+                        grow through innovative digital solutions. From SaaS products to
+                        enterprise software, we combine strategy, design, and technology to
+                        create experiences that deliver real results.
+                    </p>
+
+                    <p className="text-gray-500 leading-relaxed text-sm sm:text-base">
+                        Our team of talented developers, designers, and strategists work
+                        hand-in-hand to transform your ideas into scalable, secure, and
+                        engaging products that make a lasting impact.
+                    </p>
+
+                    {/* Highlights */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6">
+                        <div className="flex flex-col items-center text-center">
+                            <Users className="w-10 h-10 text-yellow-400 mb-2 " />
+                            <h4 className="font-semibold text-white">Experienced Team</h4>
+                            <p className="text-gray-500 text-sm">
+                                Passionate professionals who care about your success.
+                            </p>
+                        </div>
+                        <div className="flex flex-col items-center text-center">
+                            <Target className="w-10 h-10 text-yellow-400 mb-2" />
+                            <h4 className="font-semibold text-white">Client-Focused</h4>
+                            <p className="text-gray-500 text-sm">
+                                We craft solutions tailored to your specific goals.
+                            </p>
+                        </div>
+                        <div className="flex flex-col items-center text-center">
+                            <Award className="w-10 h-10 text-yellow-400 mb-2" />
+                            <h4 className="font-semibold text-white">Trusted Quality</h4>
+                            <p className="text-gray-500 text-sm">
+                                Recognized for reliable, high-performance results.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div className="py-20">
-                <div className="text-center mb-12 px-4">
-                    <h2 className="text-2xl md:text-4xl font-bold text-sky-950">
-                        What Our Clients Say
-                    </h2>
-                    <div className="w-20 h-1 bg-red-500 mx-auto my-3"></div>
-                </div>
+            {/* Testimonials */}
+            <div className="bg-gray-50 py-20 px-6 text-center">
+                <h2 className="text-3xl sm:text-4xl font-bold text-sky-950 mb-6">
+                    What Our Clients Say
+                </h2>
+                <div className="w-20 h-1 bg-yellow-400 mx-auto mb-10"></div>
 
-                <div className="max-w-5xl mx-auto grid grid-cols-1 gap-8 px-6">
+                <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
                     {testimonials.map((item, index) => (
                         <div
                             key={index}
-                            className="shadow-md rounded-2xl p-8 text-center hover:shadow-xl transition-shadow duration-300"
+                            className="bg-gradient-to-tl from-slate-950 to-slate-500 rounded-2xl p-8 shadow-lg border border-slate-700 hover:border-yellow-400 transition-all duration-300 hover:-translate-y-2"
                         >
-                            <p className="text-gray-700 italic mb-4">{item.text}</p>
-                            <p className="text-sky-800 font-semibold text-sm">
+                            <p className="text-gray-300 italic mb-4">{item.text}</p>
+                            <p className="text-yellow-400 font-semibold text-sm">
                                 - {item.author}
                             </p>
                         </div>
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
 export default About;
-
-
-
-
-

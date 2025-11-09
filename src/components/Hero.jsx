@@ -1,38 +1,66 @@
 import React from "react";
-import hero from "../assets/hero.png";
-import { NavLink } from "react-router";
+import hero1 from "../assets/hero1.png";
+import { NavLink } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="relative w-full flex justify-center items-center h-[280px] sm:h-[350px] md:h-[450px] lg:h-[475px] pt-20 sm:pt-20 overflow-hidden bg-white">
-      <div className="absolute inset-0">
+    <section className="relative w-full flex items-center h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] pt-16 sm:pt-20 overflow-hidden bg-slate-950">
+      {/* Background Image with Zoom Animation */}
+      <div className="absolute inset-0 overflow-hidden">
         <img
-          src={hero}
+          src={hero1}
           alt="Hero Background"
-          className="w-full h-[280px] sm:h-[350px] md:h-[450px] lg:h-[475px] object-cover opacity-30"
+          className="w-full h-full object-cover opacity-30 animate-[zoomIn_8s_ease-in-out_infinite_alternate]"
         />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-[90%] sm:w-[80%] md:w-[70%] text-center py-20 sm:py-25 md:py-32 lg:py-40">
-        <h1 className="text-[1.3rem] sm:text-2xl md:text-4xl lg:text-5xl font-bold text-sky-950 leading-snug">
-          Innovative SaaS Solutions for Your Business
+      <div className="relative z-10 w-[92%] sm:w-[85%] md:w-[70%] mx-auto text-center sm:text-left px-4 sm:px-8 md:px-12 py-12 sm:py-20 md:py-28">
+        <h1 className="text-[1.1rem] sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-snug sm:leading-tight">
+          Smart SaaS Solutions That Help Your Business Grow
         </h1>
 
-        <p className="text-gray-600 text-[0.75rem] sm:text-base md:text-lg lg:text-xl py-4 sm:py-8">
-          At <span className="font-semibold text-sky-950">DevTech Digital</span>,
-          we transform your ideas into powerful, scalable, and user-friendly
-          software-as-a-service solutions that drive growth and efficiency.
+        <p className="text-gray-200 text-[0.7rem] sm:text-sm md:text-lg lg:text-xl py-3 sm:py-6">
+          At{" "}
+          <span className="text-yellow-500 font-semibold cursor-pointer hover:text-yellow-300 transition-colors">
+            DevTech Solutions Provider
+          </span>
+          , we turn your ideas into reliable, scalable, and easy-to-use SaaS
+          products designed to boost efficiency and drive real business growth.
         </p>
 
-        <div className="flex justify-center items-center">
-         <NavLink to='/contact'>
-           <button className="bg-sky-950 text-white px-8 sm:px-8 py-2 sm:py-3 rounded-full text-[0.75rem] sm:text-base hover:bg-sky-900 transition-all duration-300 w-[140px] sm:w-auto">
-            Get Started
-          </button>
-         </NavLink>
+        <div className="flex justify-center sm:justify-start">
+          <NavLink to="/contact">
+            <button
+              className="
+                relative overflow-hidden
+                bg-gradient-to-r from-yellow-500 to-yellow-500 
+                text-slate-900 font-semibold
+                px-6 sm:px-10 py-2 sm:py-3 rounded-full
+                text-[0.7rem] sm:text-base mt-2
+                shadow-md transition-all duration-500
+                hover:shadow-[0_0_25px_rgba(250,204,21,0.6)]
+                hover:from-yellow-300 hover:to-yellow-400
+                hover:-translate-y-1
+                before:content-[''] before:absolute before:top-0 before:left-[-100%]
+                before:w-full before:h-full
+                before:bg-gradient-to-r before:from-white/30 before:to-transparent
+                before:transition-all before:duration-500 hover:before:left-[100%]
+              "
+            >
+              Get Started
+            </button>
+          </NavLink>
         </div>
       </div>
+
+      {/* Keyframes for zoom animation (Tailwind custom animation inline style) */}
+      <style>{`
+        @keyframes zoomIn {
+          from { transform: scale(1); }
+          to { transform: scale(1.1); }
+        }
+      `}</style>
     </section>
   );
 };
